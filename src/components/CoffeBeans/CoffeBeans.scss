@@ -1,0 +1,24 @@
+.coffe_beans {
+   width:30px;
+   position:relative;
+   margin: 0 auto 35px;
+
+   &::after {
+      position: absolute;
+      top: 14px;
+      right: 50px;
+      content: '';
+      display:block;
+      border-bottom: 1px solid #000;
+      width: 60px;
+   }
+   &::before{
+      position: absolute;
+      top: 14px;
+      left: 50px;
+      content: '';
+      display:block;
+      border-bottom: 1px solid #000;
+      width: 60px;
+   }
+}

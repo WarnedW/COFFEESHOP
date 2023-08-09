@@ -1,0 +1,61 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Merienda', cursive;
+  font-weight: 400;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.nav a.active {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1400px;
+  padding: 30px 140px;
+  margin: 0 auto;
+}
+
+.header {
+  .nav{
+    margin-bottom: 110px;
+    
+    li, a{
+      color:white;
+    }
+  }
+  .coffe_beans::after, .coffe_beans::before{
+    border-bottom: 1px solid #FFF;
+  }
+
+}
+
+.footer {
+  li, a{
+    color:black;
+  }
+  svg{
+    fill:black;
+  }
+  li {
+    color:black;
+  }
+
+  .nav_list{
+    margin: 0 auto 20px;
+    
+  }
+}
