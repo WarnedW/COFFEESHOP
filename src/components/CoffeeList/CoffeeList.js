@@ -11,6 +11,9 @@ const CoffeeList = () => {
          <CoffeeListItem/>
          <CoffeeListItem/>
          <CoffeeListItem/>
+         <CoffeeListItem/>
+         <CoffeeListItem/>
+         <CoffeeListItem/>
       </ul>
 
    )

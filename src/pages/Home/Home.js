@@ -21,7 +21,6 @@ const Home = () => {
             We makes every day full of energy and taste<pre/>Want to try our beans?
          </h2>
          <Link className="btn" to='/OurCoffee' >More</Link>
-         {/* <a href="x" className="btn">More</a> */}
       </div>
    </div>
    <div class="about_us">

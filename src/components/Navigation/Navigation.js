@@ -25,7 +25,7 @@ const Navigation = ({color = 'white'}) => {
          <ul className="nav_list">
             <li className="nav_list__item"><NavLink to='/'>Coffe House</NavLink></li>
             <li className="nav_list__item"><NavLink to='/OurCoffee'>Our coffee</NavLink></li>
-            <li className="nav_list__item">For your pleasure</li>
+            <li className="nav_list__item"><NavLink to='/ForYourPleasure'>For your pleasure</NavLink></li>
          </ul>
       </nav>
    )
