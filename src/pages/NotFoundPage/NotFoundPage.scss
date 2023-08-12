@@ -1,4 +1,20 @@
-.about_coffee {
+.NotFoundPage {
+
+
+   .flex{
+      display: flex;
+      flex-direction:column;
+      min-height: 55vh;
+   }
+
+   .helper {
+      flex:1;
+   }
+
+   .footer{
+      flex-shrink: 0;
+   }
+
    b{
       font-weight: 700;
    }
@@ -27,7 +43,7 @@
       color:white;
    }
 
-   .about {
+   .NotFoundPage {
       display: flex;
       justify-content: space-between;
       max-width: 720px;
@@ -37,6 +53,8 @@
       position:relative;
 
       &__home {
+         display: flex;
+         margin: 0 auto;
          cursor: pointer;
          padding: 10px 45px;
          background-color: none;

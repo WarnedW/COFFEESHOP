@@ -19,6 +19,12 @@ a {
   text-decoration: none;
 }
 
+// body {
+//   .spinner {
+
+//   }
+// }
+
 .nav a.active {
   text-decoration: underline;
 }
@@ -68,4 +74,9 @@ a {
   .coffee_card{margin-bottom: 60px;}
 }
 
+.NotFoundPage {
+  .footer{
+    flex-shrink: 0;
+ }
+}
 

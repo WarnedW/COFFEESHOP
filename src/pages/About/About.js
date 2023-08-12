@@ -28,7 +28,7 @@ const About = () => {
          </div>
          <div className="container">
             <Link to="/">
-               <button className='about__back'>BACK</button>
+               <button className='about__home'>HOME</button>
             </Link>
             <div className="about">
                <img src="/images/81tGmkXdGLL.jpg" alt="About" className='about__image'/>
