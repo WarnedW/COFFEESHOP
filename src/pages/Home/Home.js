@@ -8,8 +8,18 @@ import CoffeeList from '../../components/CoffeeList/CoffeeList'
 import Footer from '../../components/Footer/Footer'
 
 import { Link } from 'react-router-dom'
+import { useSelector} from 'react-redux'
+
 
 const Home = () => {
+   const products = useSelector(state => state.products)
+
+   const bestList = () => {
+      const filterProducts = products.filter((product) => (product.best === true))
+
+      return <CoffeeList coffee={filterProducts}/>
+   }
+
   return (
    <>
    <div className="header">
@@ -49,7 +59,7 @@ const Home = () => {
    <div class="best">
       <div class="best__container">
          <h2 class="best__title">Our Best</h2>
-         <CoffeeList/>
+         {bestList()}
       </div>
    </div>
    <Footer/>

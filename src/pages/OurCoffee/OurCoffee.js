@@ -2,12 +2,57 @@ import './OurCoffee.scss'
 
 import React from 'react'
 
+import {useSelector, useDispatch} from 'react-redux'
+import { FILTERED_PRODUCTS } from '../../store/actions/actions'
+
 import Navigation from '../../components/Navigation/Navigation'
 import CoffeeBeans from '../../components/CoffeBeans/CoffeeBeans'
 import CoffeeList from '../../components/CoffeeList/CoffeeList'
 import Footer from '../../components/Footer/Footer'
+import CoffeeFilters from '../../components/CoffeeFilters/CoffeeFilters'
+
+
 
 const OurCoffee = () => {
+
+   const dispatch = useDispatch()
+   const {filteredProducts, products, inputFilter, selectFilter} = useSelector(state => state)
+
+   React.useEffect(() => {
+
+      const searchItems = (items, inputFilter) => {
+         if (inputFilter.length === 0) {
+            return items;
+         };
+
+         return items.filter(item => {
+            return item.name.toLowerCase().includes(inputFilter);
+         });
+      };
+
+      const filterPost = (items, selectFilter) => {
+          switch (selectFilter) {
+              case 'Brazil':
+                  return items.filter(item => item.country === 'Brazil');
+              case 'Kenya':
+                  return items.filter(item => item.country === 'Kenya');
+              case 'Columbia':
+                  return items.filter(item => item.country === 'Columbia');
+              default:
+                  return items;
+          }
+      }
+
+      const sort = filterPost(searchItems(products, inputFilter), selectFilter);
+      dispatch(FILTERED_PRODUCTS(sort));
+
+      // eslint-disable-next-line
+  }, [inputFilter, selectFilter]);
+
+   const coffeeList = () => {
+      return <CoffeeList coffee={filteredProducts}/>
+   }
+
    return(
       <div className="our_coffee">
          <div className="our_coffee__header">
@@ -33,22 +78,9 @@ const OurCoffee = () => {
                   </p>
                </div>
             </div>
-            <div className="filter">
-               <div className="filter__input">
-                  <label className="input__label">Looking for</label>
-                  <input type="text" className="input" placeholder='start typing here...'/>
-               </div>
-               <div className="filter__pick">
-                  <label className="filter__label">Or filter</label>
-                  <div className="filter__btns">
-                     <button className="filter__btn">Brazil</button>
-                     <button className="filter__btn">Kenya</button>
-                     <button className="filter__btn">Columbia</button>
-                  </div>
-               </div>
-            </div>
+            <CoffeeFilters/>
             <div className="list">
-               <CoffeeList/>
+               {coffeeList()}
             </div>
             <Footer/>
          </div>

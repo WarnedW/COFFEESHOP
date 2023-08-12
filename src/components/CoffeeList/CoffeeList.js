@@ -5,15 +5,12 @@ import React from 'react'
 
 import CoffeeListItem from '../CoffeeListItem/CoffeListItem'
 
-const CoffeeList = () => {
+const CoffeeList = ({coffee}) => {
    return(
       <ul class="coffee_list">
-         <CoffeeListItem/>
-         <CoffeeListItem/>
-         <CoffeeListItem/>
-         <CoffeeListItem/>
-         <CoffeeListItem/>
-         <CoffeeListItem/>
+         {coffee.map((item) => {
+            return <CoffeeListItem key={item.key} {...item}/>
+         })}
       </ul>
 
    )
